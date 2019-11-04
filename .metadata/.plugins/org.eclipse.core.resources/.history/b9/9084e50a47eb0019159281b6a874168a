@@ -1,0 +1,17 @@
+package com.bridgelabz.datastructure;
+
+public class trial {
+
+	public static void main(String[] args)
+	{
+		DoublyLinkedListUtility<Integer> list = new DoublyLinkedListUtility<Integer>();
+		list.addDataAtEnd(2);
+		list.addDataAtEnd(4);
+		list.addDataAtBegin(1);
+		list.addDataAtIndex(3,2);
+		//list.removeDataFromEnd();
+		list.removeDataFromIndex(1);
+		list.showFullLL();
+	}
+
+}

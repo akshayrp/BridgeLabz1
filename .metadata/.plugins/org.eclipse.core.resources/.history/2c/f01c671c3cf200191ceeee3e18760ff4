@@ -1,0 +1,6 @@
+package com.bridgelabz.designPatterns.proxyPattern;
+
+public interface CommandExecuter
+{
+	public void runCommand(String cmd);
+}

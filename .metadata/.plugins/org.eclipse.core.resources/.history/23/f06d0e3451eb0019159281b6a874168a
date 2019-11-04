@@ -1,0 +1,42 @@
+package com.bridgelabz.datastructure;
+import com.bridgelabz.algorithmic.algoUtility;;
+public class WeekDayObjects {
+
+	public static void main(String[] args)
+	{
+		algoUtility day = new algoUtility();
+		QueueUtility<Integer> list[] = new QueueUtility[7];
+		String[] dayArray = {"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"};
+		for(int i=0;i<dayArray.length;i++)
+		{
+			list[i] = new QueueUtility<Integer>();
+		}
+		int i=1;
+		int d= day.DayOfWeek(1,10,2019);
+		for(int j=0;j<d;j++)
+		{
+			list[j].enqueue(null);
+		}
+		while(i<31)
+		{
+			int e=0;
+			while(e<7)
+			{
+				e=e+d+1;
+				list[e].enqueue(i++);
+				d = 0;
+			}
+		}
+		for(int j=0;j<=6;j++)
+		{
+			if(list[j].isEmpty())
+			{
+				continue;
+			}
+			System.out.println(dayArray[j]+ "--> ");
+			list[j].showFullQueue();
+		}
+
+	}
+
+}

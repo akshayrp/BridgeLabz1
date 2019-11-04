@@ -1,0 +1,27 @@
+package com.bridgelabz.designPatterns.observerPattern.trial;
+
+public class Person implements Observer
+{
+	private String name;
+
+	
+	
+	public Person(String name) {
+		super();
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public void update(String available)
+	{
+		System.out.println("Hello Produst is"+available);
+	}
+	
+}

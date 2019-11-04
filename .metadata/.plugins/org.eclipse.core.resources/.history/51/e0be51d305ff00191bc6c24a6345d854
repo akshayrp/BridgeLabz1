@@ -1,0 +1,49 @@
+package com.loginapp.controller;
+
+import java.io.IOException;
+import java.sql.SQLException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.*;
+
+@SuppressWarnings("serial")
+
+public class Login extends HttpServlet
+{
+	Service service = new Service();
+	
+	public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException
+	{
+		
+		String uname = request.getParameter("uname");
+		String password = request.getParameter("password");
+		try 
+		{
+			if(service.checkDB(uname,password))
+			{	
+				System.out.println("out of DB  "+uname+" "+password);
+				request.setAttribute("message",uname);
+				System.out.println("out of DB  request set"+uname+" "+password);
+				RequestDispatcher dispatcher = request.getRequestDispatcher("Welcome.jsp");
+				dispatcher.forward(request,response);
+				
+			}
+			else
+			{
+				request.setAttribute("passErrMessage","UseraName or Password Incorrect");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("Index.jsp");
+				dispatcher.forward(request,response);
+			}
+			
+		} 
+		catch (ClassNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}		
+	}
+}

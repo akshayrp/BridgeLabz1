@@ -1,0 +1,12 @@
+package com.loginapp.controller;
+
+import javax.servlet.http.*;
+
+@SuppressWarnings("serial")
+public class Controller extends HttpServlet
+{
+	public void doPost(HttpServletRequest request,HttpServletResponse response)
+	{
+		
+	}
+}

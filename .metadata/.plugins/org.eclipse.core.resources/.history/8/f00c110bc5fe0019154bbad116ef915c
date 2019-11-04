@@ -1,0 +1,49 @@
+package com.loginapp.controller;
+
+import java.io.IOException;
+import java.sql.SQLException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.*;
+
+import com.loginapp.filters.UnameFilter;
+
+@SuppressWarnings("serial")
+
+public class Login extends HttpServlet
+{
+	Service service = new Service();
+	
+	public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException
+	{
+		System.out.println("in servlet");
+		String uname = request.getParameter("uname");
+		String password = request.getParameter("password");
+		//UnameFilter filter = new UnameFilter();
+		
+		try 
+		{
+			if((service).checkDB(uname,password))
+			{	
+				request.setAttribute("message",uname);
+				RequestDispatcher dispatcher = request.getRequestDispatcher("Welcome.jsp");
+				dispatcher.forward(request,response);
+			}
+			else
+			{
+				response.getWriter().print("Passowrd or Uname not correct");
+				//System.out.println("not true");
+			}
+			
+		} 
+		catch (ClassNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}		
+	}
+}

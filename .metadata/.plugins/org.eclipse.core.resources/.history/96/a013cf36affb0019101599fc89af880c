@@ -1,0 +1,15 @@
+package com.loginapp.controller;
+
+import com.loginapp.dao.LoginData;
+
+public class Loginservice 
+{
+	public boolean checkDB(String uname,String password)
+	{
+		LoginData data = new LoginData();
+		data.setUname(uname);
+		data.setPassword(password);
+		return false;
+		
+	}
+}

@@ -1,0 +1,20 @@
+package com.bridgelabz.designPatterns.observerPattern.trial;
+
+public class Main {
+
+	public static void main(String[] args) 
+	{
+		Person p1 = new Person("P1");
+		Person p2 = new Person("P2");
+		Person p3 = new Person("P3");
+		Person p4 = new Person("P4");
+		
+		Product pro = new Product("abc", "123", 5000,"not available");
+		pro.registerObserver(p2);
+		pro.registerObserver(p3);
+		pro.notifyObserver();
+		pro.setAvailable("available");
+		pro.notifyObserver();
+	}
+
+}

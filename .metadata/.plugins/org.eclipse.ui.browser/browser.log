@@ -1,0 +1,14 @@
+
+Oct 31, 2019 16:06:47.71 NEW SESSION
+Oct 31, 2019 16:06:47.71 
+Oct 31, 2019 16:06:47.71 (/usr/lib/firefox/firefox:15711): dconf-WARNING **: 16:06:47.717: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+Oct 31, 2019 16:41:00.49 
+Oct 31, 2019 16:41:00.50 (/usr/lib/firefox/firefox:16037): dconf-WARNING **: 16:41:00.489: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+Oct 31, 2019 16:59:36.15 
+Oct 31, 2019 16:59:36.15 (/usr/lib/firefox/firefox:18569): dconf-WARNING **: 16:59:36.159: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+Oct 31, 2019 17:11:37.46 
+Oct 31, 2019 17:11:37.46 (/usr/lib/firefox/firefox:19604): dconf-WARNING **: 17:11:37.461: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+Oct 31, 2019 17:26:35.09 
+Oct 31, 2019 17:26:35.09 (/usr/lib/firefox/firefox:21002): dconf-WARNING **: 17:26:35.099: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+Oct 31, 2019 17:31:46.93 
+Oct 31, 2019 17:31:46.93 (/usr/lib/firefox/firefox:21063): dconf-WARNING **: 17:31:46.934: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied

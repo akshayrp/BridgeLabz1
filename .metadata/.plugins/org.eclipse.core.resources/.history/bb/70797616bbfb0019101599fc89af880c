@@ -1,0 +1,22 @@
+package com.loginapp.controller;
+
+import java.sql.Connection;
+
+import com.loginapp.dao.LoginData;
+import com.loginapp.provider.Provider;
+
+public class Loginservice 
+{
+	//Connection con = ;
+	
+	public boolean checkDB(String uname,String password)
+	{
+		LoginData data = new LoginData();
+		data.setUname(uname);
+		data.setPassword(password);
+		
+		Provider.connect().createStatement()
+		return false;
+		
+	}
+}

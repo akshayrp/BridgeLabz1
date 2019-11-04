@@ -1,0 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="login" method="post">
+		Enter userName : <input type="text" name="uname"><h6 style="color: red">${unameErrMessage}</h6>
+		Enter Password : <input type="password" name="password"><h6 style="color: red">${passErrMessage}</h6>
+		<input type="submit" value = "login"><br>
+		<button formaction="Registration.jsp">Register</button>
+	</form>
+</body>
+</html>

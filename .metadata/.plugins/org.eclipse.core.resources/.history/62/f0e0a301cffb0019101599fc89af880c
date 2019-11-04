@@ -1,0 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<body>
+<h4 align="center">Welcome to BridgeLabz Registration</h4><br>
+	Enter Name: <input type="text" name="name"><br><br>
+	Enter UserName: <input type="text" name="uname"><br><br>
+	Enter Password: <input type="text" name="pass"><br><br>
+	ReEnter Password: <input type="password" name="repass"><br><br>
+	<button type="button" name="clear">Clear</button><br><br>
+	<button type="button" name="Submit">Register</button>  
+</body>
+</html>

@@ -1,0 +1,15 @@
+package com.loginapp.controller;
+
+import javax.servlet.http.*;
+
+@SuppressWarnings("serial")
+public class Register extends HttpServlet
+{
+	Loginservice service = new Loginservice();
+	
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+	{
+		
+	}
+	
+}

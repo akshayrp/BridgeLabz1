@@ -1,0 +1,91 @@
+package com.bridgelabz.designPatterns.observerPattern.trial;
+
+import java.util.ArrayList;
+
+public class Product implements Subject
+{
+	private ArrayList<Observer> observers = new ArrayList<Observer>();
+	String name;
+	String modelName;
+	int price;
+	
+	
+	
+	public Product(String name, String modelName, int price) 
+	{
+		super();
+		this.name = name;
+		this.modelName = modelName;
+		this.price = price;
+	}
+	
+	
+	
+	public ArrayList<Observer> getObserver() {
+		return observer;
+	}
+
+
+
+	public void setObserver(ArrayList<Observer> observer) {
+		this.observer = observer;
+	}
+
+
+
+	public String getName() {
+		return name;
+	}
+
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
+	public String getModelName() {
+		return modelName;
+	}
+
+
+
+	public void setModelName(String modelName) {
+		this.modelName = modelName;
+	}
+
+
+
+	public int getPrice() {
+		return price;
+	}
+
+
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+
+
+	@Override
+	public void registerObserver(Observer observer)
+	{
+		observers.add(observer);
+		
+	}
+	@Override
+	public void removeObserver(Observer observer) {
+		observers.remove(observer);
+		
+	}
+	@Override
+	public void notifyObserver() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	
+}

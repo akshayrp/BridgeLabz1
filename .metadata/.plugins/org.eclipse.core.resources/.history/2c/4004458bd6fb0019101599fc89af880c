@@ -1,0 +1,35 @@
+package com.loginapp.controller;
+
+import java.sql.SQLException;
+
+import javax.servlet.http.*;
+
+import com.loginapp.dao.LoginData;
+
+@SuppressWarnings("serial")
+public class Register extends HttpServlet
+{
+	Loginservice service = new Loginservice();
+	
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+	{
+		String name = request.getParameter("name");
+		String uname = request.getParameter("uname");
+		String password = request.getParameter("password");
+		String repassword = request.getParameter("repass");
+		
+		if(password.equals(repassword))
+		{
+			try 
+			{
+				service.newuser(name, uname, password);
+			}
+			catch(ClassNotFoundException | SQLException e)
+			{
+				e.printStackTrace();
+			}
+
+		}
+	}
+	
+}

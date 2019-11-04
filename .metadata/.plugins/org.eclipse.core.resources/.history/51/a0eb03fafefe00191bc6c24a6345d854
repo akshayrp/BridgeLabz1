@@ -1,0 +1,76 @@
+package com.loginapp.filters;
+
+import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+
+public class RegisterFilter implements Filter {
+
+	public void destroy() {}
+	public void init(FilterConfig fConfig) throws ServletException {}
+	
+
+	
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException 
+	{
+		String name = request.getParameter("name");
+		String uname = request.getParameter("uname");
+		String pass = request.getParameter("pass");
+		String repass = request.getParameter("repass");
+		int count=0;
+		Pattern passPattern = Pattern.compile("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})");
+		Matcher passMatcher = passPattern.matcher(pass);
+		
+//		
+//		if (name.isEmpty() || uname.isEmpty())
+//		{
+//			request.setAttribute("usernameErrorMessage","Name/UserName field cannot be empty");
+//			requestmethod(request, response);
+//			count++;
+//		}
+//		
+		if(name.matches("((^[A-Za-z]*$).{3,10})") == false)
+		{
+			request.setAttribute("nameErrorMessage","Name should only contain Alphabetic characters and length should be between 3-10");
+			requestmethod(request, response);
+			count++;
+		}
+		
+		if(uname.matches("(([A-za-Z0-9).{5,10})") == false)
+		{
+			request.setAttribute("usernameErrorMessage","UserName should only contain Alpha-Numeric characters and length should be between 5-10");
+			requestmethod(request, response);
+			count++;
+		}
+
+		if(passMatcher.matches() == false)
+		{
+			request.setAttribute("rePasswordErrorMessage","Invalid password\n# must contains one digit from 0-9\n"+
+					"# Must contains one lowercase characters\n" + 
+					"# Must contains one uppercase characters\n" + 
+					"# Must contains one special symbols in the list \"@#$%\"\n" + 
+					"# Length at least 6 characters and maximum of 20");
+			requestmethod(request, response);
+			count++;
+		}
+		
+		if(count == 0)
+		{
+			chain.doFilter(request, response);
+		}
+	}
+	
+	public void requestmethod(ServletRequest request, ServletResponse response) throws ServletException, IOException
+	{
+		RequestDispatcher dispatcher = request.getRequestDispatcher("Registration.jsp");
+		dispatcher.forward(request,response);
+	}
+}

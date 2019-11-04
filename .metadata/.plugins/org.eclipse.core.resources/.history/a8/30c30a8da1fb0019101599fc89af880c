@@ -1,0 +1,13 @@
+package com.bridgelabz.servlet.demoapp;
+
+public class Trial {
+
+	public static void main(String[] args)
+	{
+		long time = System.currentTimeMillis();
+		time = (long) ((time/1000.0)*5);
+		System.out.println(time);
+
+	}
+
+}

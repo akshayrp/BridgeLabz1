@@ -1,0 +1,9 @@
+package com.loginapp.controller;
+
+import javax.servlet.Servlet;
+import javax.servlet.http.HttpServlet;
+
+public class Controller extends HttpServlet
+{
+	public void doPost()
+}

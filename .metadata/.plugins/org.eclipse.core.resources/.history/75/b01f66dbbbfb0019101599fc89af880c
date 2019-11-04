@@ -1,0 +1,26 @@
+package com.loginapp.controller;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import com.loginapp.dao.LoginData;
+import com.loginapp.provider.Provider;
+
+public class Loginservice 
+{
+	//Connection con = ;
+	
+	public boolean checkDB(String uname,String password) throws ClassNotFoundException, SQLException
+	{
+		LoginData data = new LoginData();
+		data.setUname(uname);
+		data.setPassword(password);
+		
+		Statement stmt = Provider.connect().createStatement();
+		ResultSet result = stmt.executeQuery("select * from logindetail where uname="+uname+" and password = "+password); 
+		return false;
+		
+	}
+}

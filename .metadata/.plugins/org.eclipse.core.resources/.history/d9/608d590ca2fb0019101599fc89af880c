@@ -1,0 +1,22 @@
+package com.bridgelabz.servlet.demoapp;
+
+public class Trial {
+
+	public static void main(String[] args)
+	{
+		long savedtime = System.currentTimeMillis();
+//		time = (long) ((time/1000.0)*5);
+		System.out.println(savedtime);
+		
+		long currtime = System.currentTimeMillis();
+		
+		if(currtime-savedtime < 5)
+		{
+			System.out.println("Session expired");
+		}
+			
+		
+
+	}
+
+}

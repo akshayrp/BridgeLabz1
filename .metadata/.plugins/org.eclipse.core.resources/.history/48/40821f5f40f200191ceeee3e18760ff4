@@ -1,0 +1,8 @@
+package com.bridgelabz.designPatterns.proxyPattern;
+
+import java.io.IOException;
+
+public interface CommandExecuter
+{
+	public void runCommand(String cmd) throws IOException;
+}

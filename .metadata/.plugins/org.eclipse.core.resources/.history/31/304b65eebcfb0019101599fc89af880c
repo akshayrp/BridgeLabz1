@@ -1,0 +1,33 @@
+package com.loginapp.controller;
+
+import java.sql.SQLException;
+
+import javax.servlet.http.*;
+
+@SuppressWarnings("serial")
+
+public class Login extends HttpServlet
+{
+	Loginservice service = new Loginservice();
+	public void doPost(HttpServletRequest request,HttpServletResponse response)
+	{
+		String uname = request.getParameter("uname");
+		String password = request.getParameter("password");
+		
+		try {
+			if((service).checkDB(uname,password))
+			{
+				
+			}
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
+}
